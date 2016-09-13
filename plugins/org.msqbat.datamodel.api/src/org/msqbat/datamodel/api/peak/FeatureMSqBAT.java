@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.msqbat.datamodel.api.ion.IonMSqBAT;
 
-public interface PeakMSqBAT extends IonMSqBAT {
+public interface FeatureMSqBAT extends IonMSqBAT {
 
-	PeakMSqBAT cloneNewIons(Collection<? extends IonMSqBAT> newIons);
+	FeatureMSqBAT cloneNewIons(Collection<? extends IonMSqBAT> newIons);
 
 	List<IonMSqBAT> getIons();
 

@@ -17,7 +17,7 @@ import org.msqbat.datamodel.api.annotation.PeakAnnotatable;
 import org.msqbat.datamodel.api.ion.IonMSqBAT;
 import org.msqbat.datamodel.api.ion.SelectorIon;
 import org.msqbat.datamodel.api.ion.SelectorIonHighestIntensity;
-import org.msqbat.datamodel.api.peak.PeakMSqBAT;
+import org.msqbat.datamodel.api.peak.FeatureMSqBAT;
 import org.msqbat.datamodel.api.provider.TransformerProviderScanNumber2ScanNumber;
 import org.msqbat.datamodel.api.sample.SampleMSqBAT;
 import org.msqbat.datamodel.api.scan.ScanMSqBAT;
@@ -49,7 +49,7 @@ public class PeakSimple implements PeakAnnotatable, Serializable {
 		}
 		selector = SELECTOR_DEFAULT;
 		for (final IonMSqBAT i : ions) {
-			if (i instanceof PeakMSqBAT) {
+			if (i instanceof FeatureMSqBAT) {
 				throw new IllegalArgumentException("Member ions must not be peaks");
 			}
 			this.ions.add(i);
@@ -150,7 +150,7 @@ public class PeakSimple implements PeakAnnotatable, Serializable {
 	}
 
 	@Override
-	public PeakMSqBAT getPeak() {
+	public FeatureMSqBAT getPeak() {
 
 		return this;
 	}
@@ -256,7 +256,7 @@ public class PeakSimple implements PeakAnnotatable, Serializable {
 	}
 
 	@Override
-	public synchronized PeakSimple setPeak(final PeakMSqBAT peak) {
+	public synchronized PeakSimple setPeak(final FeatureMSqBAT peak) {
 		throw new UnsupportedOperationException();
 	}
 

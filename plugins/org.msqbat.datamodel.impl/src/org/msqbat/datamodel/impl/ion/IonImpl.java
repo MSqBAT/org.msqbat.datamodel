@@ -8,7 +8,7 @@ import java.util.Collection;
 import org.msqbat.datamodel.api.annotation.AnnotationSerializable;
 import org.msqbat.datamodel.api.annotation.IonAnnotatable;
 import org.msqbat.datamodel.api.ion.IonMSqBAT;
-import org.msqbat.datamodel.api.peak.PeakMSqBAT;
+import org.msqbat.datamodel.api.peak.FeatureMSqBAT;
 import org.msqbat.datamodel.api.sample.SampleMSqBAT;
 import org.msqbat.datamodel.api.scan.ScanMSqBAT;
 
@@ -24,7 +24,7 @@ public class IonImpl implements IonAnnotatable {
 	private final double intensity;
 	private final double mz;
 	private String name;
-	private PeakMSqBAT peak;
+	private FeatureMSqBAT peak;
 	private double[] retentionTimes;
 	private ScanMSqBAT scan;
 
@@ -125,7 +125,7 @@ public class IonImpl implements IonAnnotatable {
 	}
 
 	@Override
-	public synchronized PeakMSqBAT getPeak() {
+	public synchronized FeatureMSqBAT getPeak() {
 
 		return peak;
 	}
@@ -180,7 +180,7 @@ public class IonImpl implements IonAnnotatable {
 	}
 
 	@Override
-	public synchronized IonImpl setPeak(final PeakMSqBAT peak) {
+	public synchronized IonImpl setPeak(final FeatureMSqBAT peak) {
 
 		if (peak != null && !peak.getIons().contains(this)) {
 			throw new IllegalArgumentException("This ion is not a member of this peak");

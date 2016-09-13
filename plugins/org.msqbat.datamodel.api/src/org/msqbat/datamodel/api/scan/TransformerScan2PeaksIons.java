@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.msqbat.datamodel.api.ion.IonMSqBAT;
-import org.msqbat.datamodel.api.peak.PeakMSqBAT;
+import org.msqbat.datamodel.api.peak.FeatureMSqBAT;
 
 import net.sf.kerner.utils.collections.list.AbstractTransformingListFactory;
 
@@ -16,8 +16,8 @@ public class TransformerScan2PeaksIons extends AbstractTransformingListFactory<S
 		if (element instanceof ScanIons) {
 			for (final IonMSqBAT p : ((ScanIons) element).getIons()) {
 				result.add(p);
-				if (p instanceof PeakMSqBAT) {
-					result.addAll(((PeakMSqBAT) p).getIons());
+				if (p instanceof FeatureMSqBAT) {
+					result.addAll(((FeatureMSqBAT) p).getIons());
 				}
 			}
 		}

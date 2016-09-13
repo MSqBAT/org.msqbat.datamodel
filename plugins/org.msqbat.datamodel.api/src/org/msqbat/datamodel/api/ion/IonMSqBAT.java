@@ -3,7 +3,7 @@ package org.msqbat.datamodel.api.ion;
 
 import java.io.Serializable;
 
-import org.msqbat.datamodel.api.peak.PeakMSqBAT;
+import org.msqbat.datamodel.api.peak.FeatureMSqBAT;
 import org.msqbat.datamodel.api.provider.ProviderIntensity;
 import org.msqbat.datamodel.api.provider.ProviderMzScanNumber;
 import org.msqbat.datamodel.api.provider.ProviderRetentionTime;
@@ -19,7 +19,7 @@ public interface IonMSqBAT
 
 	String getName();
 
-	PeakMSqBAT getPeak();
+	FeatureMSqBAT getPeak();
 
 	SampleMSqBAT getSample();
 
@@ -28,13 +28,13 @@ public interface IonMSqBAT
 	IonMSqBAT setName(String name);
 
 	/**
-	 * This method is typically called by an instance of {@link PeakMSqBAT}.
+	 * This method is typically called by an instance of {@link FeatureMSqBAT}.
 	 *
 	 * @param peak
-	 *            {@link PeakMSqBAT} in which this ion is a member of
+	 *            {@link FeatureMSqBAT} in which this ion is a member of
 	 * @return {code this}
 	 */
-	IonMSqBAT setPeak(PeakMSqBAT peak);
+	IonMSqBAT setPeak(FeatureMSqBAT peak);
 
 	IonMSqBAT setSample(SampleMSqBAT sample);
 
