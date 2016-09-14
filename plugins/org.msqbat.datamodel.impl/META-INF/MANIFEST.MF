@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MSqBAT Data Model Default Implementation
+Bundle-SymbolicName: org.msqbat.datamodel.impl
+Bundle-Version: 4.0.0.qualifier
+Bundle-Vendor: SILICOSCIENCES
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: com.google.common.primitives,
+ net.sf.kerner.utils.collections.list,
+ org.osgi.framework;version="1.3.0",
+ org.slf4j;version="1.6.4"
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.sf.kerner.utils,
+ org.msqbat.datamodel.api
+Export-Package: org.msqbat.datamodel.impl,
+ org.msqbat.datamodel.impl.ion,
+ org.msqbat.datamodel.impl.scan
